@@ -6,7 +6,7 @@ CREATE DATABASE mi_base_de_datos;
   
 CREATE TABLE pais (
     id_pais SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULLs
+    nombre VARCHAR(100) NOT NULL
 );
 
 -- Crear la tabla de departamentos
@@ -29,5 +29,5 @@ CREATE TABLE localidad (
     id_municipio INT REFERENCES municipio(id_municipio) ON DELETE CASCADE
 );
 
-COPY localidad (id_departamento, id_municipio)
-FROM '/ruta/a/tu/localidades.csv' DELIMITER ',' CSV HEADER;
+\copy localidad (id_departamento, id_municipio) FROM '/home/root/Descargas/localidades.csv' DELIMITER ',' CSV HEADER;
+
